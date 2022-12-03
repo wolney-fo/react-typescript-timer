@@ -1,6 +1,31 @@
+import { useEffect, useState } from "react"
+
+
+const COUNTDOWN_INITIAL_TIME_IN_SECONDS = 25 * 60 // 25 minutes
+
 function App() {
-  return(
-    <h1>Hello World</h1>
+  const [secondsAmount, setSecondsAmount] = useState(COUNTDOWN_INITIAL_TIME_IN_SECONDS)
+
+  useEffect(() => {
+    if (secondsAmount == 0) {
+      alert('End')
+      return;
+    }
+
+    setTimeout(() => {
+      setSecondsAmount(state => state - 1);
+    }, 1000)
+  }, [secondsAmount]);
+
+  const minutes = Math.floor(secondsAmount / 60);
+  const seconds = secondsAmount % 60;
+
+  return (
+    <div>
+      <span>{String(minutes).padStart(2, '0')}</span>
+      <span>:</span>
+      <span>{String(seconds).padStart(2, '0')}</span>
+    </div>
   )
 }
 
