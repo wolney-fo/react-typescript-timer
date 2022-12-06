@@ -1,0 +1,12 @@
+.timer-container {
+    cursor: default;
+    transition: .4s;
+    top: 100px;
+
+    font-size: 9rem;
+  }
+  
+  .timer-container:hover {
+    color: rgb(192, 174, 235);
+    transition: .4s;
+  }
