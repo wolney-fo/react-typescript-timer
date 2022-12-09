@@ -25,7 +25,7 @@ body {
 }
 
 #dark-theme,
-:root:has(#dark-theme:checked) {
+:root:has(#theme-switcher:checked) {
   --bg-color: rgb(25, 11, 59);
   --text-color: rgb(91, 57, 168);
 }
